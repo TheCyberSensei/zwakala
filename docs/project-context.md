@@ -6,7 +6,7 @@ Last updated: 9 November 2026 (Africa/Johannesburg).
 
 This exploratory project concerns digital banking confidence, financial technology accessibility and community cybersecurity awareness in South Africa. It is being developed during the Andela × OpenAI Codex Accelerator, Cape Town Cohort 2026.
 
-Current work is limited to a local research repository and development documentation. No survey or application has been implemented in this repository. The final capstone direction has not been selected, and no research findings are claimed.
+An Apps Script generator and offline tests implement the approved frontline banking-staff questionnaire. The participant deployed through the Apps Script editor, supplied successful pre-publication verification logs after debugging, and confirmed that the form was tested, approved and shared. Codex has not independently inspected the deployed source or published form. The final capstone direction has not been selected, no capstone application has been implemented and no research findings are claimed.
 
 ## Research origin and evidence boundaries
 
@@ -68,4 +68,8 @@ The PDF and presentation remain in the parent workspace, outside this repository
 
 Preserve respondent privacy from the start. Private responses, interviews, transcripts, recordings and identifying details must not enter Git, development logs or examples. Future validation should use synthetic data. Ignore rules are a safeguard, not a substitute for reviewing content.
 
-The next milestone is participant review of research scope and data-handling requirements. Survey design and implementation require a further instruction. Publishing surveys, sharing data, accessing external accounts, deleting resources, creating remotes and pushing content require explicit approval. Capstone selection remains a separate human decision.
+The participant approved native write-in Other for Q1, Q2, Q3 and Q6, and split Q3's ambiguous combined option into fixed Not sure and native Other while retaining its maximum of two selections. The approved owner is the participant's confirmed Shymoon Google Workspace account; the participant is its administrator. Participant-supplied logs establish successful script execution; Codex has not independently verified ownership or anonymous external access. The participant confirmed testing without providing individual manual-check results.
+
+This survey captures staff observations, not direct customer testimony or a representative estimate of South African customers. Future analysis must investigate competing explanations, selection and recall biases, and contradictory evidence. Do not assume that AI, simulations or any proposed intervention is beneficial merely because a question mentions it.
+
+The participant authorised review and the survey milestone commit after confirming publication. Clasp's existing audit findings remain unresolved; the participant selected editor-only deployment and requested no further dependency investigation. Future external actions and data access retain explicit approval boundaries. No deadline pressure justifies reducing engineering quality, research rigour, security or honest reporting; present genuine trade-offs to the participant. Capstone selection remains separate.

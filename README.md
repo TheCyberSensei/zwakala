@@ -2,17 +2,17 @@
 
 Exploratory research into digital banking confidence, financial technology accessibility and community cybersecurity awareness in South Africa.
 
-This repository supports the Andela × OpenAI Codex Accelerator, Cape Town Cohort 2026. The final capstone direction has not been selected. Original capstone idea generation belongs to the participant.
+This repository supports participation in the Andela × OpenAI Codex Accelerator, Cape Town Cohort 2026. The participant has approved a proof of concept based on their original community digital-safety reporting idea. No official endorsement or institutional participation is implied.
 
 ## Current stage
 
-The approved survey has an Apps Script generator, offline tests and a participant-confirmed published Google Form. The participant deployed through the Apps Script editor, supplied successful debugging/verification logs, and confirmed testing, approval and sharing. Codex has not independently inspected the published form or accessed responses. No capstone application has been implemented and no research findings are established by this work.
+The approved survey has an Apps Script generator, offline tests and a participant-confirmed published Google Form. The participant deployed through the Apps Script editor, supplied successful debugging/verification logs, and confirmed testing, approval and sharing. Codex has not independently inspected the published form or accessed responses. The [local prototype](prototype/README.md) now implements Milestones 1–2: private fictional reporting, exact audience approvals, moderator review, explained candidate relationships, qualified community information and simulated institutional notification/response with contributor follow-up. Later milestones require review; this is not a deployed reporting service or evidence of effectiveness.
 
 The research begins with participant-reported observations that some people need assistance using banking applications and ATMs. The extent, causes and consequences remain questions for investigation. See [project context](docs/project-context.md) for the research scope and evidence boundaries.
 
 The specific capstone brief focuses on African storytelling. Digital confidence research does not automatically satisfy that brief. The [initial architectural decision](docs/decisions.md#d001-research-and-capstone-selection-remain-separate) explains this separation.
 
-Submission deadline: **11 November 2026**, as supplied by the participant. The submission time has not been confirmed.
+Submission deadline: **11 November 2026**, as supplied by the participant. The participant specifies midnight on Wednesday, 11 November 2026, South African time.
 
 ## Repository layout
 
@@ -44,7 +44,7 @@ sa-digital-confidence-lab/
 
 - [AGENTS.md](AGENTS.md) defines instructions for Codex working in this repository.
 - [Development log](docs/codex-development-log.md) records work performed, approvals and actual verification results.
-- [Survey](survey/README.md) documents local validation, execution approvals and manual checks. [Research](research/README.md) and [prototype](prototype/README.md) remain placeholders.
+- [Survey](survey/README.md) documents local validation, execution approvals and manual checks. [Research](research/README.md) indexes the completed assessments; [prototype](prototype/README.md) documents local setup, implementation and acceptance gates. The layout above is the original foundation; consult those directory guides for current contents.
 
 Use Node.js 22 or later for local survey generation and tests; these require no installed packages. Clasp 3.4.1 remains a pinned development dependency with unresolved audit findings documented in the survey README. The participant chose editor-only deployment, which does not use clasp. The runtime script has no external library dependency.
 
@@ -76,4 +76,4 @@ Git requires a commit author identity. If none is configured, set `user.name` an
 
 ## Next milestone
 
-The participant has confirmed the survey is tested, approved and shared. Keep responses outside Git; any response access or analysis needs an explicitly agreed scope. Draft verification/recovery functions intentionally reject published forms and should not be rerun against the live survey. Capstone selection remains a separate participant decision governed by the storytelling brief.
+Milestones 1–2 are participant-tested and approved. Milestone 3 begins with a local Git checkpoint and zero-cost local-AI feasibility assessment; substantial downloads or new runtime setup require separate approval. No external AI service or credential has been introduced. The participant has confirmed the survey is tested, approved and shared. Keep responses outside Git; any response access or analysis needs an explicitly agreed scope. Draft verification/recovery functions intentionally reject published forms and should not be rerun against the live survey.

@@ -1,12 +1,12 @@
 # Project context
 
-Last updated: 9 November 2026 (Africa/Johannesburg).
+Last updated: 10 November 2026 (Africa/Johannesburg).
 
 ## Purpose and current stage
 
 This exploratory project concerns digital banking confidence, financial technology accessibility and community cybersecurity awareness in South Africa. It is being developed during the Andela × OpenAI Codex Accelerator, Cape Town Cohort 2026.
 
-An Apps Script generator and offline tests implement the approved frontline banking-staff questionnaire. The participant deployed through the Apps Script editor, supplied successful pre-publication verification logs after debugging, and confirmed that the form was tested, approved and shared. Codex has not independently inspected the deployed source or published form. The final capstone direction has not been selected, no capstone application has been implemented and no research findings are claimed.
+An Apps Script generator and offline tests implement the approved frontline banking-staff questionnaire. The participant deployed through the Apps Script editor, supplied successful pre-publication verification logs after debugging, and confirmed that the form was tested, approved and shared. Codex has not independently inspected the deployed source or published form. Subsequently, the participant approved a proof of concept based on their original community digital-safety reporting idea: a connected journey from private experience through reviewed community understanding and candidate incident relationships to relevant institutional notification, response and contributor follow-up. Milestones 1–2 are participant-tested and approved. Milestone 3 Stage A authorises a reviewed local Git checkpoint and a bounded zero-cost AI feasibility assessment; substantial downloads/installations require separate approval. This selection does not establish effectiveness or institutional participation.
 
 ## Research origin and evidence boundaries
 
@@ -44,7 +44,7 @@ The specific **Capstone Brief**, pages 1–2, focuses on technology that helps A
 
 Page 3 calls for a working proof of concept rather than production-ready software and explicitly reserves original capstone idea generation for the participant. Codex must not generate original capstone ideas.
 
-Digital banking research does not automatically qualify for this brief. The participant must select the final direction and establish its fit. See [decision D001](decisions.md#d001-research-and-capstone-selection-remain-separate).
+Digital banking research does not automatically qualify for this brief. The participant has selected their connected community-reporting direction for the proof of concept; helping people communicate experiences to community and institutional audiences is its proposed storytelling connection. The research remains independently valuable. See the historical [decision D001](decisions.md#d001-research-and-capstone-selection-remain-separate) and the subsequent implementation decision D007.
 
 ## Onboarding guidance and source distinction
 
@@ -52,7 +52,7 @@ The **Codex Hackathon Program - Onboarding Deck**, slide 8, separately emphasise
 
 Slide 6 contains broader project examples that differ from the specific storytelling tracks. The participant has confirmed that the specific storytelling brief remains authoritative for capstone scope. The onboarding criteria inform development quality; they do not establish that this research qualifies as a capstone.
 
-Submission deadline: **11 November 2026**, supplied by the participant. Slide 6 states 11 November without a year. No submission time was established during setup.
+Submission deadline: **11 November 2026**, supplied by the participant. Slide 6 states 11 November without a year. No submission time was established during setup; the participant subsequently specified midnight on Wednesday, 11 November 2026, South African time.
 
 ## Source record
 
@@ -72,4 +72,4 @@ The participant approved native write-in Other for Q1, Q2, Q3 and Q6, and split 
 
 This survey captures staff observations, not direct customer testimony or a representative estimate of South African customers. Future analysis must investigate competing explanations, selection and recall biases, and contradictory evidence. Do not assume that AI, simulations or any proposed intervention is beneficial merely because a question mentions it.
 
-The participant authorised review and the survey milestone commit after confirming publication. Clasp's existing audit findings remain unresolved; the participant selected editor-only deployment and requested no further dependency investigation. Future external actions and data access retain explicit approval boundaries. No deadline pressure justifies reducing engineering quality, research rigour, security or honest reporting; present genuine trade-offs to the participant. Capstone selection remains separate.
+The participant authorised review and the survey milestone commit after confirming publication. Clasp's existing audit findings remain unresolved; the participant selected editor-only deployment and requested no further survey dependency investigation. Future external actions and data access retain explicit approval boundaries. No deadline pressure justifies reducing engineering quality, research rigour, security or honest reporting; present genuine trade-offs to the participant. The new prototype uses fictional data only, with separate dependencies under `prototype/`; no external AI service or credential is authorised in Milestones 1–2. Current functionality uses version-bound exact audience approval, moderator decisions, rule-based candidate matching and simulated institutional delivery/response. Corrections and withdrawal stop further sharing without pretending to recall delivered copies. Milestone 2 is approved. Preserve its working application during the authorised Milestone 3 feasibility stage; do not proceed to Milestone 4.

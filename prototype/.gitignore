@@ -1,0 +1,5 @@
+.demo/
+.impeccable/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

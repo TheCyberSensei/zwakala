@@ -2,6 +2,15 @@
 
 Record meaningful decisions with their date, status, rationale and consequences. Do not treat hypotheses as findings or record approvals that have not occurred.
 
+## D010: Close AI feasibility and preserve the verified submission
+
+- **Date:** 10 November 2026 (Africa/Johannesburg).
+- **Status:** Explicit participant decision in the Milestone 4 request.
+- **Decision:** Do not implement local AI inference or introduce a paid API. Institution associations remain manually selected; incident matching remains explainable and rule-based. AI-assisted institution association is a potential future enhancement, not a delivered capability.
+- **Rationale:** The participant judged available spare resources insufficient for a reliable model demonstration and confirmed no API budget. Preserve the functioning approved baseline rather than add an unsustainable dependency. This is a scope/resource decision, not proof that all local AI is impossible.
+- **Submission scope:** Preserve application baseline `3feabe7bfa5db0154e571b73963c572a3adc9604`; run final tests, clean setup and browser acceptance; prepare a concise README, fictional demo and local commits. Include reviewed public-source research with historical framing. Keep the outdated personal workspace handover local-only; do not redistribute the original accelerator PDF/deck.
+- **Approval boundary:** Local reviewed submission commits are authorised. GitHub account/visibility/licensing choices, repository creation, pushing and any application deployment remain separate decisions. Stop after preparation and verification.
+
 ## D009: Version-bound community intelligence and simulated institutional response
 
 - **Date:** 10 November 2026 (Africa/Johannesburg).

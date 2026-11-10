@@ -136,3 +136,6 @@ temp/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Local continuity notes with personal workspace details; not submission material
+/CODEX_WORKSPACE_HANDOVER.md

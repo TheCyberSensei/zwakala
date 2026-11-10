@@ -1,79 +1,112 @@
-# South African Digital Confidence Research Lab
+# South African Digital Confidence Lab
 
-Exploratory research into digital banking confidence, financial technology accessibility and community cybersecurity awareness in South Africa.
+**People’s digital-safety experiences, shared by choice and connected to a visible response.**
 
-This repository supports participation in the Andela × OpenAI Codex Accelerator, Cape Town Cohort 2026. The participant has approved a proof of concept based on their original community digital-safety reporting idea. No official endorsement or institutional participation is implied.
+This participant-originated project explores how ordinary South Africans could describe scams or attempted fraud, help others recognise similar experiences, and reach relevant organisations. An organisation may be impersonated or able to help without being responsible.
 
-## Current stage
+Built with Codex during the **Andela × OpenAI Codex Accelerator — Cape Town Cohort 2026**. This is independent participant work; no organiser, bank or institutional endorsement is implied.
 
-The approved survey has an Apps Script generator, offline tests and a participant-confirmed published Google Form. The participant deployed through the Apps Script editor, supplied successful debugging/verification logs, and confirmed testing, approval and sharing. Codex has not independently inspected the published form or accessed responses. The [local prototype](prototype/README.md) now implements Milestones 1–2: private fictional reporting, exact audience approvals, moderator review, explained candidate relationships, qualified community information and simulated institutional notification/response with contributor follow-up. Later milestones require review; this is not a deployed reporting service or evidence of effectiveness.
+**Working local proof of concept. Fictional data and simulated institutions only.** Institution tagging is manual; incident matching uses explainable rules. There is **no runtime AI, paid API, model download or commercial key requirement**. This is not a public reporting, emergency-assistance or money-recovery service.
 
-The research begins with participant-reported observations that some people need assistance using banking applications and ATMs. The extent, causes and consequences remain questions for investigation. See [project context](docs/project-context.md) for the research scope and evidence boundaries.
+## The connected journey
 
-The specific capstone brief focuses on African storytelling. Digital confidence research does not automatically satisfy that brief. The [initial architectural decision](docs/decisions.md#d001-research-and-capstone-selection-remain-separate) explains this separation.
-
-Submission deadline: **11 November 2026**, as supplied by the participant. The participant specifies midnight on Wednesday, 11 November 2026, South African time.
-
-## Repository layout
-
-```text
-sa-digital-confidence-lab/
-├── README.md
-├── AGENTS.md
-├── .gitignore
-├── docs/
-│   ├── project-context.md
-│   ├── decisions.md
-│   └── codex-development-log.md
-├── survey/
-│   ├── README.md
-│   ├── form-spec.md
-│   ├── Code.gs
-│   ├── SurveySpec.gs
-│   ├── build-spec.cjs
-│   ├── appsscript.json
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── .claspignore
-│   └── tests/survey.test.cjs
-├── research/
-│   └── README.md
-└── prototype/
-    └── README.md
+```mermaid
+flowchart LR
+  A[Private experience] --> B[Contributor approves exact audience versions]
+  B --> C[Submit for moderator review]
+  C --> D[Local community experiences and qualified notices]
+  C --> E[Relevant simulated institution inbox]
+  E --> F[Attributed acknowledgement and updates]
+  F --> G[Contributor confirms or disputes outcome]
 ```
 
-- [AGENTS.md](AGENTS.md) defines instructions for Codex working in this repository.
-- [Development log](docs/codex-development-log.md) records work performed, approvals and actual verification results.
-- [Survey](survey/README.md) documents local validation, execution approvals and manual checks. [Research](research/README.md) indexes the completed assessments; [prototype](prototype/README.md) documents local setup, implementation and acceptance gates. The layout above is the original foundation; consult those directory guides for current contents.
+Implemented capabilities:
 
-Use Node.js 22 or later for local survey generation and tests; these require no installed packages. Clasp 3.4.1 remains a pinned development dependency with unresolved audit findings documented in the survey README. The participant chose editor-only deployment, which does not use clasp. The runtime script has no external library dependency.
+- Four-step reporting; private original, separately approved community and organisation text.
+- Multiple institutions and relationships, including impersonation, service involvement and potential assistance.
+- Moderator approval, withholding and clarification requests with reasons and attribution.
+- Explained related/duplicate candidates, human decisions and qualified community notices.
+- Persistent immediate notification simulation, institution-specific permissions and duplicate prevention.
+- Institutional updates and contributor follow-up; corrections and withdrawal stop further sharing while retaining accurate history.
+- Server-side access checks, durable SQLite storage, responsive layouts and keyboard controls.
 
-## Privacy and security
+## African storytelling fit
 
-Keep respondent identities, raw responses, private interviews, recordings and transcripts outside this repository wherever possible. Do not collect banking credentials, PINs, one-time passwords or account identifiers for this setup.
+The contribution is helping people communicate their own experiences to audiences who may learn or respond—not simply collecting tickets.
 
-If local private working material is later authorised, designated ignored locations include `private/`, `survey/responses/`, `survey/exports/` and `research/private/`. These directories are not created by this setup. The ignore rules also cover credentials, environment files, Apps Script authentication files, local configuration, dependency directories and caches.
+| Brief track | What the prototype demonstrates |
+| --- | --- |
+| Voices & Languages | Preserves original text in all 11 written official languages and mixed-language answers. English UI; SASL media and translation are not implemented. |
+| Discovery & Audience | Contributor-chosen community/institutional audiences and reviewed links between experiences. |
+| Creation & Craft | A person writes once, edits audience-specific copies and approves the exact words shared. |
+| Truth, Authorship & Ownership | Versioned approvals, attribution, uncertainty labels, corrections and disputes; a report is never treated as verified fact. |
 
-Ignore rules are filename-based safeguards. They do not encrypt files, identify sensitive content or remove files already tracked by Git. Review every intended commit; never use force-add to bypass privacy exclusions.
+This is the project's interpretation of the supplied brief, not a claim of organiser approval. Research into banking confidence remains independently valuable; see [project context](docs/project-context.md).
 
-Explicit approval is required before external account access, new uploads or form creation, publication/sharing, deletion, remote repository creation or pushing content. The participant performed and approved this survey's deployment and publication, and authorised the survey milestone commit subject to review. These approvals do not authorise unrelated external actions or future commits.
+## Run locally
 
-## Review local survey work
-
-Run these commands from this repository directory:
+Prerequisites: **Node.js 22.23.4**, npm (verified with **12.2.2**) and a modern browser. No account registration or API key. From the repository root, in PowerShell:
 
 ```powershell
-git status --short --branch --untracked-files=all
-git diff --check
-git diff
-git remote
-npm --prefix survey test
+cd prototype
+npm.cmd ci --ignore-scripts
+$env:NEXT_TELEMETRY_DISABLED = '1'
+npm.cmd run setup
+npm.cmd run build
+npm.cmd start
 ```
 
-Read new untracked files as well as the diff before approving a commit; Git's normal diff omits untracked files. Stage explicit reviewed paths only after approval. The initial commit is `f457f72999784886be512d9bc133721d81d97fd6`.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000). In a second terminal, from `prototype/`:
 
-Git requires a commit author identity. If none is configured, set `user.name` and `user.email` with `git config --local` using your own chosen values. Do not change global configuration for this project.
+```powershell
+Get-Content .demo/account-keys.local.txt
+```
 
-## Next milestone
+Select the corresponding account in the app and paste its generated demo key. **Keep this file private; never include it in screenshots or Git.**
 
-Milestones 1–2 are participant-tested and approved. Milestone 3 begins with a local Git checkpoint and zero-cost local-AI feasibility assessment; substantial downloads or new runtime setup require separate approval. No external AI service or credential has been introduced. The participant has confirmed the survey is tested, approved and shared. Keep responses outside Git; any response access or analysis needs an explicitly agreed scope. Draft verification/recovery functions intentionally reject published forms and should not be rerun against the live survey.
+| Account | Demonstration role |
+| --- | --- |
+| `contributor-a`, `contributor-b` | Separate private reports and sharing choices |
+| `moderator` | Review submissions, relationships and notices |
+| `institution-bank` | Fictional Example Bank inbox and responses |
+| `institution-mobile` | Fictional Example Mobile inbox and responses |
+
+Community viewing is available after sign-in. Example Payments is selectable but has no seeded representative. Setup creates accounts, not prefilled reports, and refuses to overwrite existing data. **On later runs, skip setup and run `npm.cmd start`** (rebuild only after source changes). Stop with Ctrl+C. For development, use `npm.cmd run dev`. Do not expose the server through a public host or tunnel.
+
+Follow the [3–5 minute demonstration](docs/demo-walkthrough.md) for exact fictional text, preparation and role changes. See the [prototype guide](prototype/README.md) for storage and workflow details.
+
+## Verification and Codex contributions
+
+From `prototype/`:
+
+```powershell
+npm.cmd test
+npm.cmd run typecheck
+npm.cmd run build
+```
+
+Final verification is recorded in [verification results](docs/final-verification.md), including clean setup and browser checks. The separate survey has 69 offline mocked tests; from the repository root run `npm.cmd --prefix survey test`. Those tests need no clasp installation and do not contact Google.
+
+Codex assisted planning, public-source research synthesis, implementation, debugging, security/permission tests, browser verification and documentation. The participant originated the concept, approved scope/design decisions, tested the roles and chose to omit runtime AI. [Development evidence](docs/codex-development-log.md) distinguishes actual actions and results from proposals.
+
+## Limits and future work
+
+- No real institutional participation, external notifications, production identity verification or public deployment.
+- No established fraud reduction, user demand, multilingual comprehension or campaign-detection accuracy.
+- Copying text is not redaction or anonymity. All selected institutions receive the same approved organisation prose with their own relationship context.
+- Delivered snapshots are retained after withdrawal. Local data is unencrypted; the developer can access demo keys. SQLite is experimental on this Node version; CSP retains development allowances.
+- Daily/weekly digests, SASL media, validated language support and institutional integrations are future work. **AI-assisted institution association is a potential future enhancement only**, requiring resources, privacy controls and evaluation. [Milestone 3 decision](docs/milestone-3-feasibility.md)
+- The survey's unused clasp dependency has previously recorded unresolved audit findings; it is separate from the prototype and unnecessary for editor deployment or offline survey tests. See [survey documentation](survey/README.md).
+
+## Repository map
+
+| Directory | Contents |
+| --- | --- |
+| [prototype/](prototype/README.md) | Working application, locked dependencies and tests |
+| [docs/](docs/project-context.md) | Context, decisions, evidence, demonstration and publication preparation |
+| [research/](research/README.md) | Dated public-source assessments; no private interviews or respondent data |
+| [survey/](survey/README.md) | Approved questionnaire, Apps Script generator and mocked tests |
+
+[AGENTS.md](AGENTS.md) records development safeguards. No original brief/deck, private responses, local keys or databases are distributed. Publication remains subject to owner approval; see [GitHub preparation](docs/github-publication.md).
+
+Submission deadline supplied by the participant: **midnight Wednesday, 11 November 2026, South African time**.

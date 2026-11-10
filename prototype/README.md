@@ -1,6 +1,6 @@
 # Digital-safety reporting prototype
 
-Local fictional demonstration of the participant's original reporting-to-response idea. **Milestones 1–2 are participant-tested and approved.** No real institutions participate, no external notifications are sent, and this is not an emergency or real reporting service. Milestone 3 starts with feasibility only; no AI dependency is active.
+Local fictional demonstration of the participant's original reporting-to-response idea. **Milestones 1–2 are participant-tested and approved.** No real institutions participate, no external notifications are sent, and this is not an emergency or real reporting service. Milestone 3 is closed by participant decision with manual institution tagging and rule-based matching. No AI dependency is active.
 
 ## Run locally (PowerShell)
 
@@ -83,7 +83,7 @@ The runtime path is workspace-specific. Elsewhere use an already-installed Playw
 | --- | --- | --- |
 | 1: Foundation/private reporting | Working private journey, disclosure, permissions, validation and storage | Approved by participant |
 | 2: Connected journey | Reviewed community text, explained links, simulated inbox/response, follow-up, correction and isolation | Approved by participant |
-| 3: Bounded AI | One evaluated real capability with human confirmation and non-AI fallback | Not started |
-| 4: Final verification | Complete demo, failure recovery, security/accessibility checks and honest limits | Later; milestone checks apply now |
+| 3: AI feasibility | Assess a sustainable optional capability without compromising the baseline | Closed: participant chose no runtime AI; manual tagging retained |
+| 4: Final verification | Complete demo, failure recovery, security/accessibility checks and honest limits | See [final verification](../docs/final-verification.md) |
 
-Daily/weekly digests, SASL media, external AI and real institutional integration remain deferred. A reviewed local baseline checkpoint is authorised. Deployment, public reporting, external account access and pushing are not authorised.
+Daily/weekly digests, SASL media, external AI and real institutional integration remain deferred. Reviewed local submission commits are authorised. Deployment, public reporting, external account access and pushing are not authorised.

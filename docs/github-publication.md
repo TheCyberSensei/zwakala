@@ -1,4 +1,4 @@
-# GitHub publication preparation
+# ZWAKALA — GitHub publication preparation
 
 **Prepared locally; no remote repository or push authorised or performed.** Publishing source is separate from deploying the application. The app remains loopback-only and must not be hosted as a real incident-reporting service.
 
@@ -12,7 +12,7 @@ No runtime AI, model weights or paid-service configuration is included. The surv
 
 ## Owner decisions before publication
 
-- Approve the GitHub account/organisation, repository name and visibility. Proposed name: `sa-digital-confidence-lab`.
+- Approve the GitHub account/organisation, repository name and visibility. Proposed name: `zwakala`. The existing local directory and internal package identifiers remain unchanged.
 - Review the exact local commits and Git author metadata; publication exposes commit history as well as current files.
 - Choose reuse/licensing terms if an open-source licence is desired. None has been selected or granted by Codex; a public repository alone is not an open-source licence.
 - Confirm that the dated research and fictional demonstration material may accompany the submission.

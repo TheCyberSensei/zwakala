@@ -110,12 +110,12 @@ export default function Workspace() {
   return <>
     <a href="#main" className="skip">Skip to workspace</a>
     <div className="demo-banner"><strong>Fictional demonstration.</strong> Please use made-up experiences only. No real names, banking details or security codes.</div>
-    <header><div className="brand">Digital safety<span>Experiences that can help others</span></div>
+    <header><div className="brand">ZWAKALA<span>Your story. A signal for change.</span></div>
       {actor && <div className="identity"><span>{actor.name}</span><button className="quiet on-dark" disabled={busy} onClick={logout}>Sign out</button></div>}
     </header>
     <main id="main">
       {initializing ? <p role="status">Opening your workspace…</p> : !actor ? <div className="login-layout">
-        <section><h1>Your experience matters.<br />Your choices come first.</h1><p className="lede">Tell your story once. Choose who might learn from it or help, while keeping your original private.</p>
+        <section><h1>Your experience matters.<br />Your choices come first.</h1><p className="lede">A community-powered digital safety and reporting platform.</p><p>With ZWAKALA, your experience can help communities learn and relevant organisations respond. Tell your story once and choose what to share, while keeping your original private.</p>
           <p>This local demonstration saves fictional reports. Sharing happens only after your approval and moderator review, within simulated local community and organisation views.</p><p className="hint">This is not an emergency or real incident-reporting service.</p></section>
         <form onSubmit={login} className="login-panel"><h2>Open your demo workspace</h2><p>Use your locally generated demo key. <span className="hint">Keys are in <code>.demo/account-keys.local.txt</code>.</span></p>
           <label htmlFor="account">Demo account</label><select id="account" value={account} onChange={e => setAccount(e.target.value)}>

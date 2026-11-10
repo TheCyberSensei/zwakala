@@ -1,4 +1,8 @@
-# Digital-safety reporting prototype
+# ZWAKALA — local prototype
+
+**Your story. A signal for change.**
+
+A community-powered digital safety and reporting platform.
 
 Local fictional demonstration of the participant's original reporting-to-response idea. **Milestones 1–2 are participant-tested and approved.** No real institutions participate, no external notifications are sent, and this is not an emergency or real reporting service. Milestone 3 is closed by participant decision with manual institution tagging and rule-based matching. No AI dependency is active.
 

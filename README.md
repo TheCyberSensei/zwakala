@@ -1,8 +1,12 @@
-# South African Digital Confidence Lab
+# ZWAKALA
 
-**People’s digital-safety experiences, shared by choice and connected to a visible response.**
+**Your story. A signal for change.**
 
-This participant-originated project explores how ordinary South Africans could describe scams or attempted fraud, help others recognise similar experiences, and reach relevant organisations. An organisation may be impersonated or able to help without being responsible.
+**A community-powered digital safety and reporting platform.**
+
+An unsettling message or attempted scam can leave someone unsure where to turn. ZWAKALA gives people a way to tell their story, choose what others may see, and follow what happens next. Individual experiences can help communities recognise similar situations and give relevant organisations information they can respond to. An organisation may be impersonated or able to help without being responsible.
+
+The name *Zwakala* draws on the isiZulu sense of being heard and the familiar South African invitation to come through. It reflects our belief that personal experiences can help communities recognise risks and encourage meaningful responses.
 
 Built with Codex during the **Andela × OpenAI Codex Accelerator — Cape Town Cohort 2026**. This is independent participant work; no organiser, bank or institutional endorsement is implied.
 
@@ -108,5 +112,3 @@ Codex assisted planning, public-source research synthesis, implementation, debug
 | [survey/](survey/README.md) | Approved questionnaire, Apps Script generator and mocked tests |
 
 [AGENTS.md](AGENTS.md) records development safeguards. No original brief/deck, private responses, local keys or databases are distributed. Publication remains subject to owner approval; see [GitHub preparation](docs/github-publication.md).
-
-Submission deadline supplied by the participant: **midnight Wednesday, 11 November 2026, South African time**.

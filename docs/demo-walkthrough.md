@@ -1,4 +1,8 @@
-# A fictional experience becomes useful information
+# ZWAKALA demonstration: a fictional experience becomes useful information
+
+**Your story. A signal for change.**
+
+A community-powered digital safety and reporting platform.
 
 Target: **3–5 minutes**, using the real local application. All people, organisations, incidents and responses below are fictional. Institutional activity is simulated, not a live notification or investigation. No runtime AI is used.
 
@@ -64,7 +68,7 @@ This preparation is disclosed: B is an existing fictional comparison report; A i
 
 | Time | Live action | Explain |
 | --- | --- | --- |
-| 0:00–0:30 | Show A's private original and approved versions. | “This explores how people can communicate a digital-safety experience to those who may learn or respond. The original idea is mine; Codex helped develop and test it. Everything shown is fictional.” |
+| 0:00–0:30 | Show A's private original and approved versions. | “This is ZWAKALA. Your story. A signal for change. It is a community-powered digital safety and reporting platform, connecting people's experiences to community awareness and relevant organisations' responses. The original idea is mine; Codex helped develop and test it. Everything shown is fictional.” |
 | 0:30–1:00 | Select **Submit approved version for review**. | “Saving is private. I manually chose the institutions, relationships and exact text for each audience. Mentioning a bank does not make it responsible.” |
 | 1:00–2:00 | Sign out, select Moderator and sign in privately. In **Review queue**, approve A with the reason above. Inspect the A/B suggestion, enter “Similar reported channel, request and bank impersonation within two days; connection remains unverified.” Select **Confirm possible relationship**, then **Display qualified community notice**. | “Rules suggest a connection and explain why. A moderator can reject it or mark a duplicate. This is not AI, corroboration or proof of one campaign.” |
 | 2:00–2:30 | Open **Community**. Show both exact narratives and the qualified notice. | “Only approved versions appear. Private originals and matching metadata stay out. Readers see uncertainty and links back to the shared accounts.” |

@@ -68,3 +68,14 @@ English UI; no SASL media, automated translation or full assistive-technology ce
 The unused survey clasp dependency retains its previously documented audit findings; no new audit or remediation was performed. It is not installed or required for the application or offline survey tests.
 
 The demonstration guide is prepared for a 3–5 minute walkthrough; no timed user rehearsal or video recording is claimed. GitHub account, repository visibility, optional reuse licence and publication approval remain owner decisions. No remote, push or deployment was performed.
+
+## Later branding-specific verification — 10 November 2026
+
+After applying the approved ZWAKALA identity, verification ran in a separate local copy containing the updated application source. This is distinct from the original Milestone 4 verification above.
+
+- **49 application tests passed**; TypeScript check and production build passed.
+- Focused browser checks covered desktop/mobile widths (1440/390/320px), 200% text and keyboard navigation, alongside the name, tagline, description and metadata. Desktop and mobile screenshots were visually inspected.
+- No browser errors or external requests were observed.
+- The complete **31-check browser acceptance suite** and **69 survey tests were not rerun after branding**. Their results above belong to the original Milestone 4 verification.
+
+Later on the same date, following the two README editorial adjustments, the main local application was rebuilt successfully and restarted on `http://127.0.0.1:3000`. A fresh browser smoke check confirmed HTTP 200, the rendered name/tagline/description and browser title, with no browser exceptions. No sign-in, account setup or report mutation was performed by this check; no additional full test-suite run is claimed.

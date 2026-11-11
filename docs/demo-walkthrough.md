@@ -4,11 +4,11 @@
 
 *A community-powered digital safety and reporting platform.*
 
-Prepared 11 November 2026. Target **4½–5 minutes**, with a shorter three-minute recording option below. Timings are estimates, not an observed human rehearsal. All incidents, accounts, organisations and responses are fictional; institutional delivery is simulated locally. Public source: [TheCyberSensei/zwakala](https://github.com/TheCyberSensei/zwakala).
+Refined 11 November 2026. Plan **about four minutes**, including a **30-second personal introduction**, leaving up to one minute for navigation within the five-minute limit. Timings are estimates, not an observed human rehearsal. The presenter's background and motivation are participant-supplied; all demonstrated incidents, accounts, organisations and responses are fictional. Institutional delivery is simulated locally. Public source: [TheCyberSensei/zwakala](https://github.com/TheCyberSensei/zwakala).
 
 ## Recommended story: one experience, a possible connection, a response
 
-Follow Contributor A from a saved private story back to their own progress screen. Contributor B is the prepared comparison, not a second protagonist. This lets a first-time audience understand the stakes before seeing the controls.
+Begin with Nkululeko's work in cybersecurity education and community digital safety, and the observation that inspired ZWAKALA. Then follow Contributor A from a saved private story back to their own progress screen. Contributor B is the prepared comparison, not a second protagonist. The personal introduction establishes motivation without presenting observations as measured research findings.
 
 Spend most of the demonstration on two moments: **two separate stories become a qualified community signal**, then **the contributor can question an institution's reported action**. Together they show what goes beyond a complaint form: controlled disclosure, reviewable connections, useful audiences and accountable follow-up. Describe collective intelligence as a possibility demonstrated by the workflow, not proven intelligence quality or independent corroboration.
 
@@ -20,60 +20,58 @@ The trade-off is less live form entry, more visible outcomes. Prepare typing and
 
 | Target time | Screen/action | What judges should understand |
 | --- | --- | --- |
-| 0:00–0:35 | A's saved story, ZWAKALA header | A personal experience can help someone else; this is fictional. |
-| 0:35–1:10 | Sharing summary; open approved versions; submit A | The person chooses the exact words and audiences. |
-| 1:10–2:00 | Moderator approves A; reviews reasons; confirms the possible relationship; displays notice | Similarity is explained, reviewed and qualified. |
-| 2:00–2:25 | Community notice and two stories | **Pause here:** useful warning, without pretending two accounts prove a campaign. |
-| 2:25–3:20 | Bank inbox: acknowledge A, then record an action | Relevant institutions can respond; impersonation does not imply fault. |
-| 3:20–4:10 | Return to A; refresh; dispute that action | Delivery is not resolution. The contributor remains part of the conversation. |
-| 4:10–4:40 | Stay on contributor progress; close | What works, what Codex contributed, and what still needs validation. |
-| 4:40–5:00 | Buffer | Scrolling, sign-in or slower rendering; do not add features to fill it. |
+| 0:00–0:30 | Hold on ZWAKALA's header and A's saved story; introduce yourself | Who built it, why, and whose experiences it hopes to connect. |
+| 0:30–1:00 | Sharing summary; show approved community text; submit A | The person chooses the exact words and audiences. |
+| 1:00–1:45 | Moderator approves A; reviews reasons; confirms the possible relationship; displays notice | Similarity is explained, reviewed and qualified. |
+| 1:45–2:10 | Community notice and two stories | **Pause here:** useful warning, without pretending two accounts prove a campaign. |
+| 2:10–2:55 | Bank inbox: acknowledge A, then record an action | Relevant institutions can respond; impersonation does not imply fault. |
+| 2:55–3:35 | Return to A; refresh; dispute that action | Delivery is not resolution. The contributor remains part of the conversation. |
+| 3:35–4:00 | Stay on contributor progress; close | What works, what Codex contributed, and what still needs validation. |
+| 4:00–5:00 | Navigation buffer, not extra content | Allow slower rendering, scrolling and role switches; keep the two key moments. |
 
 ## Spoken script
 
-The script is approximately **400 words**. Adapt the rhythm to your own voice. Speak while navigating where comfortable; pause for the community notice and final feedback. Do not read all the on-screen text aloud.
+The **295-word script** includes a **62-word personal introduction** and leaves room for navigation. Adapt the rhythm to your own voice. Speak while navigating where comfortable; pause for the community notice and final feedback. Do not read all the on-screen text aloud. Keep the intro over the already-open application: a webcam or separate slide is optional, not needed on this low-memory computer.
 
-**Opening — A's saved story**
+**Personal introduction — approximately 30 seconds**
 
-> A message arrives, claiming to be from your bank. It asks for a security code. You spot the risk and ignore it. But what if someone in your community receives the same kind of message tomorrow?
+> Hi, I'm Nkululeko Mthembu. I work in cybersecurity education and community digital safety in South Africa.
 >
-> My starting point was noticing how some South Africans rely on others for help with digital banking. That raised questions about confidence, trust and safety. ZWAKALA explores what could happen if people's experiences helped others learn, and reached organisations able to respond.
+> I've seen how uncertainty with digital services can create risks around trust and safety. I wondered whether experiences of attempted scams could help someone else recognise a similar threat.
 >
-> Your story. A signal for change. Everything I’m showing is fictional, including the bank.
+> That inspired ZWAKALA: connecting people's experiences with community awareness and an opportunity for relevant institutions to respond.
 
 **Control — approved versions and submission**
 
-> I’ve prepared two different fictional accounts to save typing time. This one is still private; the other has already been reviewed.
+> These are two prepared fictional stories. A message impersonated a bank and asked for a security code. This contributor did not reply.
 >
-> The contributor decides which words the community may see and what selected organisations receive. The original remains accessible only to the contributor and moderator. Here, the bank was impersonated; that does not mean it caused the scam.
->
-> I’ll now submit the approved version for review.
+> Their original is private to them and the moderator. They choose the exact versions for other audiences. I’ll submit this approved version; the other story was reviewed earlier.
 
 **Collective intelligence — moderator to community**
 
-> As moderator, I check the approved versions before sharing. The system suggests a connection: similar channel, request, organisation relationship and nearby dates. These are explainable rules, not AI.
+> As moderator, I check the approved text. Explainable rules suggest a connection: similar channel, request, bank impersonation and nearby dates. This is not AI.
 >
-> I can reject this suggestion. Here, I’m confirming only a possible relationship and displaying a qualified notice.
+> I can reject it. Here, I confirm only a possible relationship and display a qualified notice.
 >
-> Now the community can read both stories in the contributors' approved words. This is the important step: separate experiences become a useful signal. Two reports do not prove a campaign. The uncertainty stays visible, and readers can return to the stories behind the notice.
+> Now both stories can help others recognise a risk. Two reports do not prove a campaign. The uncertainty stays visible, with links to the contributors' own approved words.
 
 **Response — simulated bank inbox**
 
-> The relevant bank receives the approved organisation version in this simulated inbox. It can be relevant because it was impersonated, without being at fault.
+> This simulated bank receives the approved organisation version. Being impersonated makes it relevant, not responsible.
 >
-> I’ll acknowledge receipt, then record a fictional action: preparing a customer warning. Receipt, action and resolution are different things. No real institution is involved here.
+> I’ll acknowledge receipt and record a fictional customer-warning action. No real bank is involved. Delivery, acknowledgement and action are different stages.
 
 **Follow-up — back to A**
 
-> Back with the contributor, we can see who responded and what they said. But a reported action is not automatically a satisfactory outcome.
+> Back with the contributor, we can see who responded. But their reported action has not answered this person's concern.
 >
-> This person still needs clarification. I’ll record that disagreement. Their voice does not disappear once they press Submit.
+> I’ll record a dispute. The contributor can question the institution's account; their voice does not disappear after submission.
 
 **Close — hold on the recorded dispute**
 
-> The idea is mine. Codex helped me research, design, build, debug and test this connected journey.
+> The idea is mine. Codex helped research, design, build and test this working local journey.
 >
-> What works today is a local prototype: controlled sharing, reviewed connections and visible follow-up. It does not yet prove fraud reduction or institutional adoption. The next step is testing with people and exploring partnerships, not assuming they exist.
+> It demonstrates controlled sharing and visible follow-up, not proven fraud reduction. Next come testing with people and exploring institutional partnerships.
 >
 > ZWAKALA: your story, a signal for change.
 
@@ -102,7 +100,8 @@ The script is approximately **400 words**. Adapt the rhythm to your own voice. S
 
 | Step | Actions | Expected result / cue |
 | --- | --- | --- |
-| A: control | Show **Your sharing choices**. Expand **View approved community version** and **View organisation version**. Scroll to **What happened next?**, select **Submit approved version for review**. | Before clicking, it says saved privately/not submitted. Afterwards the button reads **Submitted for review**. Only approved audience versions become eligible; saving alone did not share. |
+| Personal introduction | Start with A's prepared saved report selected and the ZWAKALA header visible. Deliver the personal introduction without navigating. | About 30 seconds to establish your background and motivation; no extra slide/app required. |
+| A: control | Show **Your sharing choices** and expand **View approved community version**. The summary confirms organisation text/recipients are approved; open **View organisation version** only if time permits (the moderator/inbox will show it later). Scroll to **What happened next?**, select **Submit approved version for review**. | Before clicking, it says saved privately/not submitted. Afterwards the button reads **Submitted for review**. Only approved audience versions become eligible; saving alone did not share. |
 | Switch 1: Moderator | **Sign out** → choose Moderator → sign in. In **Review queue**, find **Fictional code request — Example A**. Read its approved text; expand **Read private original and connections** if needed. Enter the review reason below and click **Approve sharing**. | **Approved for sharing** appears with the reason/account. This triggers eligible community display and immediate simulated delivery, not an institutional acknowledgement. B was already reviewed during preparation. |
 | Moderator: possible connection | Scroll to **Possible connections**. Find the A/B pair, read the reasons and caveat. Enter the association reason; click **Confirm possible relationship**, then **Display qualified community notice**. | The pair is **Potentially related experiences**, not a duplicate. A qualified notice appears only because both current community versions are approved. The typed reason explains the moderator decision; the public warning itself uses fixed, qualified wording. |
 | Moderator: Community | Select **Community**. Show **Qualified pattern notices** and the two shared stories; use **Read linked experience 1** if useful. | Two exact approved narratives; no private originals. Pause long enough to read the warning's uncertainty. This is an authenticated local community view, not a public reporting site. |
@@ -160,7 +159,7 @@ Prepare the following reports using the ordinary UI. No database edits, seed scr
 ## Contingencies and shorter alternatives
 
 - **Navigation takes longer:** keep the private/public distinction, qualified connection and contributor follow-up; shorten narration and omit opening both version panels or following the notice link. Do not skip mandatory review or pretend an uncompleted action succeeded.
-- **A strict three-minute recording:** use the same completed journey but trim disclosed sign-in/navigation pauses. Label cuts “Switching demo role”; leave the approvals, uncertainty notice, institutional update and contributor feedback visible. This saves time but provides less continuous evidence than the preferred 4½–5 minute walkthrough. For a strict three-minute *live* slot, prepare the bank update beforehand and clearly say that you are showing an earlier fictional run; do not call the whole journey live.
+- **If navigation uses the buffer:** keep the intro near 30 seconds, paste the prepared non-sensitive reasons/updates and shorten repeated explanations. Do not remove the qualified-notice pause or contributor dispute. If a recording still exceeds five minutes, trim disclosed sign-in/navigation pauses and label cuts “Switching demo role”. This provides less continuous evidence than the preferred four-minute plan but preserves the tested journey; do not speed through consent or conceal failures.
 - **Stale view:** use the relevant **Refresh review queue**, **Refresh community**, **Refresh inbox** or **Refresh progress** once. If the saved report is not selected after sign-in, select it. Do not edit the story just to refresh it: editing invalidates current sharing/review.
 - **No candidate or notice:** verify the two dates, SMS, share-code request, matching bank/impersonation relationship, different contributor accounts and both current community approvals. Never change the rules or assert that a suggestion exists when it does not. Both versions must be reviewed before a notice can display.
 - **Wrong inbox entry:** match the approved prose beginning **FICTIONAL DEMONSTRATION A**, not list position. If the action stage is unavailable, acknowledge A first. Do not create duplicate accounts/reports as a workaround.
@@ -178,3 +177,5 @@ On **11 November 2026**, source review checked the actual control labels, permis
 The initial run passed through community display, then timed out because the validation selector incorrectly added a full stop to the bank relationship label. The selector was corrected and the remaining transitions passed against the same rehearsal state. No application correction was needed; this was not a single uninterrupted timed rehearsal. The resumed check found no browser exceptions/external requests and confirmed the original store's table-content/key hash unchanged across that check. The ordinary demo was not used for sign-in or report mutation.
 
 No full test-suite rerun, measured narration time, recording performance test, real-user study or successful live human presentation is claimed. Timing remains an estimate until the presenter rehearses with their recorder. No real institution, verified campaign, fraud-reduction outcome or runtime AI is demonstrated. See [verification evidence](final-verification.md) for the separately recorded checks and owner-inspected GitHub diagram.
+
+Later on 11 November, the participant supplied the personal background/motivation used in the new introduction and approved retaining the two key moments. This revision shortens narration and makes the second version panel optional; the fictional A/B data and tested submission-to-dispute transitions remain unchanged. The four-minute plan and 30-second introduction still require a timed presenter rehearsal. Subsequent application regression checks for repository cleanup are recorded separately in the verification document; they are not a recording rehearsal.

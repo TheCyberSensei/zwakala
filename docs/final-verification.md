@@ -1,8 +1,20 @@
 # Final verification and submission readiness
 
-Verified **10 November 2026**, Africa/Johannesburg, in Default Mode. Approved application baseline: `3feabe7bfa5db0154e571b73963c572a3adc9604`. Milestone 4 changes documentation and repository preparation only; application code, dependencies, survey source and existing demo data remain unchanged.
+This document separates dated historical verification from the final capstone evidence. On **11 November 2026**, the participant excluded the separate banking-staff questionnaire from the current repository after verified archival. Its earlier mocked tests are not validation of ZWAKALA. See [D011](decisions.md#d011-separate-the-banking-survey-from-the-final-capstone).
 
-## Actual results
+## Final script refinement and repository cleanup — 11 November 2026
+
+- **Application:** 49 tests passed with zero failures/skips; TypeScript and production build passed. Verification ran in the independent local copy previously cloned from GitHub; every tracked application source/config/test file was compared with the current repository and matched after line-ending normalisation. No source or dependency changes were made. Existing Node experimental SQLite warning remains.
+- **Runtime/preservation:** The rebuilt isolated app started on port 3100 and returned HTTP 200 with ZWAKALA branding; it was then stopped. The original port-3000 app remained available. All table-content and key hashes in ten existing repository demo stores matched across the preservation check. No existing accounts were reset or replaced.
+- **Survey separation:** Complete external archive verified before removal: 10,231 files, 1,455 directories, 255,785,646 file bytes, including source/documentation and installed dependencies. Every file's size/SHA-256 matched, and a post-removal archive recheck also passed. Ten tracked survey files and the leftover local dependency directory were removed. No private responses or deployed Google Form were accessed or altered. Earlier Git commits retain the survey intentionally.
+- **Repository review:** All 40 remaining local Markdown links resolve. The 43-file prospective tree contains no survey/archive/private-data paths; checks against 50 known demo keys and credential patterns found no matches. Ignore-rule and staged-whitespace checks passed. These checks supplement review rather than guarantee detection of every possible secret.
+- **Documentation/presentation:** Current survey setup instructions, testing claims and dependency warnings removed; historical records retained with explicit scope. The historical survey-guide link now targets its preserved Git commit. The revised script has 295 spoken words and a 62-word personal introduction, with four minutes planned and up to one minute navigation buffer. The unchanged A/B transitions retain the focused validation recorded under Presenter journey validation; controls were rechecked in source. This is not a timed presenter or recording-performance rehearsal, and the full browser acceptance suite was not rerun for this cleanup.
+
+The latest cleanup and preceding presenter-guide commit await approval to push. No application deployment or history/author rewrite is part of this work.
+
+## Original Milestone 4 application results
+
+Original Milestone 4 verification: **10 November 2026**, Africa/Johannesburg, Default Mode. Approved application baseline: `3feabe7bfa5db0154e571b73963c572a3adc9604`. That phase changed documentation/repository preparation only; application code, dependencies and existing demo data remained unchanged.
 
 | Check | Observed result |
 | --- | --- |
@@ -13,7 +25,6 @@ Verified **10 November 2026**, Africa/Johannesburg, in Default Mode. Approved ap
 | Production build | Passed |
 | Foundation browser acceptance | **21 passed** |
 | Connected-journey browser acceptance | **10 passed** |
-| Survey generated-spec parity and offline mocks | **69 passed**, zero failures/skips; no Google access or clasp installation |
 | Browser errors/external requests | None observed by either browser script |
 | Existing-data preservation | All eight pre-existing demo stores, all tables and key-file hashes unchanged |
 | Local normal app | HTTP 200 on port 3000 after verification |
@@ -65,9 +76,7 @@ No runtime AI or alias-based institution extractor exists. Manual institution ta
 
 English UI; no SASL media, automated translation or full assistive-technology certification. Institutions, identities and deliveries are simulated. Local storage is unencrypted and the developer can access all demo identities. Previously delivered information is retained after withdrawal. Real deployments require separate identity, retention, privacy, moderation and security work.
 
-The unused survey clasp dependency retains its previously documented audit findings; no new audit or remediation was performed. It is not installed or required for the application or offline survey tests.
-
-The demonstration guide is prepared for a 3–5 minute walkthrough; no timed user rehearsal or video recording is claimed. GitHub account, repository visibility, optional reuse licence and publication approval remain owner decisions. No remote, push or deployment was performed.
+At the original Milestone 4 checkpoint, the demonstration guide was prepared but no timed user rehearsal or video recording was claimed, and repository publication was still pending. Subsequent approved GitHub publication and owner verification are recorded below and in the development log. Application deployment remains outside scope.
 
 ## Later branding-specific verification — 10 November 2026
 

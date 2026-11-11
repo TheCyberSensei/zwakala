@@ -2,6 +2,14 @@
 
 Record meaningful decisions with their date, status, rationale and consequences. Do not treat hypotheses as findings or record approvals that have not occurred.
 
+## D011: Separate the banking survey from the final capstone
+
+- **Date/status:** 11 November 2026 (Africa/Johannesburg); explicit participant decision.
+- **Decision:** Archive the complete local banking-staff survey outside ZWAKALA, verify preservation, then remove its directory from the current tree. Keep the final repository focused on the community-reporting application, relevant research and development evidence. The questionnaire was an earlier exploratory direction, not implementation or validation evidence for this capstone.
+- **Preservation:** The local archive `banking-staff-survey-20261111` contains the original source, generated specification, documentation, tests, manifests and installed dependencies, with a SHA-256/size manifest and recovery note. All 10,231 files and 1,455 directories were verified against the source before removal. The archive is outside Git; its full local location is supplied to the participant.
+- **Consequences:** Current setup/test instructions and dependency warnings no longer refer to the survey. Historical decisions, logs and published commits remain intact and explicitly historical. No Git history rewrite, private-response deletion or change to the deployed Google Form. The archive preserves existing dependency limitations rather than remediating them.
+- **Approval boundary:** Refine the personal introduction and four-minute demonstration plan, verify the application and create one reviewed local commit. Do not push until participant review. Keep existing author metadata and application behaviour unchanged.
+
 ## D010: Close AI feasibility and preserve the verified submission
 
 - **Date:** 10 November 2026 (Africa/Johannesburg).
@@ -67,7 +75,7 @@ Record meaningful decisions with their date, status, rationale and consequences.
 - **Status:** Approved in the survey implementation plan.
 - **Decision:** Keep authoritative survey content in a structured Markdown JSON block, generate a separate Apps Script specification, and use standalone FormApp with a lock and persistent creation state. Use local clasp 3.4.1 for eventual approved upload and the editor for execution.
 - **Rationale:** Content can be reviewed without changing execution logic. Unpublished creation and conservative recovery prevent normal reruns and ambiguous failures from creating duplicate forms. No web deployment, custom OAuth client, response API or extra runtime dependency is needed.
-- **Consequences:** Reruns verify rather than repair. Partial state and content changes require human recovery; copying projects or clearing properties defeats the duplicate guard. Checkbox validation and Workspace access need manual verification because readable API coverage is incomplete. See the [survey guide](../survey/README.md).
+- **Consequences:** Reruns verify rather than repair. Partial state and content changes require human recovery; copying projects or clearing properties defeats the duplicate guard. Checkbox validation and Workspace access need manual verification because readable API coverage is incomplete. See the [historical survey guide](https://github.com/TheCyberSensei/zwakala/blob/e0f0f659826aa7bff555b41c5c12cafe4c12476b/survey/README.md) (removed from the current tree under D011).
 - **Open issue:** Installation succeeded, but the dependency audit returned 8 affected-package findings (2 high, 6 moderate). These remain unresolved. The participant subsequently chose editor-only deployment (D006); clasp is not required for offline tests or for the FormApp runtime.
 
 ## D004: Clarify Other and Not sure responses

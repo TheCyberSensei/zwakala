@@ -1,51 +1,37 @@
-# ZWAKALA — GitHub publication preparation
+# ZWAKALA — GitHub publication guidance
 
-**Prepared locally; no remote repository or push authorised or performed.** Publishing source is separate from deploying the application. The app remains loopback-only and must not be hosted as a real incident-reporting service.
+The reviewed source is public at [TheCyberSensei/zwakala](https://github.com/TheCyberSensei/zwakala), owned by the participant's confirmed personal account. Publishing source is separate from deploying the application: the app remains loopback-only and must not be hosted as a real incident-reporting service.
 
-## Submission contents
+## Current submission contents
 
-Include the working prototype and locked dependencies, tests, root README, AGENTS, development evidence/decisions, demonstration and verification guides, the dated public-source research reports and the already-committed survey implementation. Research documents describe their historical stage; current behaviour is defined by the root/prototype README.
+Include the working prototype and locked dependencies, tests, README, AGENTS, development evidence/decisions, demonstration and verification guides, and relevant dated public-source research. Historical research proposals are not an implemented feature list.
 
-Exclude generated demo keys, SQLite databases/sidecars, sessions, private narratives, response exports/interviews, environment files, OAuth credentials, dependencies/build caches and recordings. The outdated `CODEX_WORKSPACE_HANDOVER.md` remains a local-only continuity file, with personal workspace details and superseded instructions. It is not needed by judges. Original accelerator PDF/deck files are not redistributed.
+The earlier banking-staff questionnaire was archived outside this repository and removed from its current tree on 11 November 2026. It did not implement or validate ZWAKALA. Prior published commits retain it historically; no history rewrite is intended. See [D011](decisions.md#d011-separate-the-banking-survey-from-the-final-capstone).
 
-No runtime AI, model weights or paid-service configuration is included. The survey's unused clasp dependency has documented historical audit findings; do not install it to run the prototype or offline survey tests.
+Exclude generated demo keys, SQLite databases/sidecars, sessions, private narratives, response exports/interviews, environment files, OAuth credentials, dependencies/build caches, recordings and local archives. The personal `CODEX_WORKSPACE_HANDOVER.md` stays local-only. Original accelerator PDF/deck files are not redistributed. No runtime AI, model weights or paid-service configuration is included.
 
-## Owner decisions before publication
+## Next update — approval required before pushing
 
-- Approve the GitHub account/organisation, repository name and visibility. Proposed name: `zwakala`. The existing local directory and internal package identifiers remain unchanged.
-- Review the exact local commits and Git author metadata; publication exposes commit history as well as current files.
-- Choose reuse/licensing terms if an open-source licence is desired. None has been selected or granted by Codex; a public repository alone is not an open-source licence.
-- Confirm that the dated research and fictional demonstration material may accompany the submission.
+The personal-introduction/script refinement and survey-removal commit is local for participant review. The earlier presenter-guide commit may also be ahead of origin. Review the complete outgoing range, not just the latest commit:
 
-## Exact publication steps — only after approval
+```powershell
+git status --short --branch
+git remote -v
+git log --oneline origin/main..main
+git diff --stat origin/main..main
+git diff origin/main..main
+git diff --check origin/main..main
+git ls-files
+```
 
-1. Review locally from the repository root:
+Confirm a clean tree, branch `main`, and the existing origin `https://github.com/TheCyberSensei/zwakala.git`. Verify the survey archive separately and never stage it. Preserve existing author metadata; any future commit-email change requires its own instruction. No licence has been selected; public visibility alone is not an open-source licence.
 
-   ```powershell
-   git status --short
-   git log --oneline --decorate -5
-   git diff --check
-   git ls-files
-   git remote -v
-   ```
+Only after the participant approves this update:
 
-   Confirm the intended branch is `main`, the intended commits are present, no unexpected changes remain, and no secrets/private data are tracked. Review ignored contents separately; never force-add them.
+```powershell
+git push origin main
+```
 
-2. Sign in to the approved GitHub account yourself, or separately authorise Codex account access. Create an **empty** repository with the approved name/visibility. Do not initialise it with a README, licence or .gitignore because local history already exists.
+Do not create another repository, replace origin, force-push or rewrite history. If Git reports unexpected remote commits or account/ownership errors, inspect and resolve the specific issue rather than overwriting. Authenticate through GitHub/Git Credential Manager; never put tokens in source, URLs, scripts or chat.
 
-3. Copy its HTTPS URL. From the local repository root, run these commands only after publication approval:
-
-   ```powershell
-   $repositoryUrl = Read-Host 'Paste the approved empty GitHub repository HTTPS URL'
-   git remote add origin $repositoryUrl
-   git remote -v
-   git push -u origin main
-   ```
-
-   Verify `origin` before pushing. If an origin already exists, inspect it and stop rather than replacing it blindly. Authenticate through GitHub/Git Credential Manager; never place a token in source, a URL, a script or a chat.
-
-4. Inspect the published README, diagram, relative links, research index and file tree. Confirm no databases/keys/data files appear. Clone to a fresh directory and follow the README setup before sharing the repository link with judges.
-
-5. Submit the approved repository URL and separately reviewed demonstration recording. Publishing the repository does not publish the application or authorise real incident collection.
-
-No force push, history rewrite, external account access or automatic deployment is part of this preparation.
+After an approved push, verify the remote commit and current file tree, README/diagram and documentation links. Confirm the current tree has no survey folder, archive, databases or keys. Historical commits will still contain the survey. Then submit the repository link with a separately reviewed demonstration recording; neither source publication nor a fictional demo authorises real incident collection.

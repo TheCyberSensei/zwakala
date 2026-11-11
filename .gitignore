@@ -139,3 +139,7 @@ Desktop.ini
 
 # Local continuity notes with personal workspace details; not submission material
 /CODEX_WORKSPACE_HANDOVER.md
+
+# Separate exploratory survey and local recovery archives are not capstone source
+/survey/
+/local-archives/

@@ -89,7 +89,7 @@ npm.cmd run typecheck
 npm.cmd run build
 ```
 
-Final verification is recorded in [verification results](docs/final-verification.md), including clean setup and browser checks. The separate survey has 69 offline mocked tests; from the repository root run `npm.cmd --prefix survey test`. Those tests need no clasp installation and do not contact Google.
+Application verification is recorded in [verification results](docs/final-verification.md), including clean setup and browser checks.
 
 Codex assisted planning, public-source research synthesis, implementation, debugging, security/permission tests, browser verification and documentation. The participant originated the concept, approved scope/design decisions, tested the roles and chose to omit runtime AI. [Development evidence](docs/codex-development-log.md) distinguishes actual actions and results from proposals.
 
@@ -100,7 +100,6 @@ Codex assisted planning, public-source research synthesis, implementation, debug
 - Copying text is not redaction or anonymity. All selected institutions receive the same approved organisation prose with their own relationship context.
 - Delivered snapshots are retained after withdrawal. Local data is unencrypted; the developer can access demo keys. SQLite is experimental on this Node version; CSP retains development allowances.
 - Daily/weekly digests, SASL media, validated language support and institutional integrations are future work. **AI-assisted institution association is a potential future enhancement only**, requiring resources, privacy controls and evaluation. [Milestone 3 decision](docs/milestone-3-feasibility.md)
-- The survey's unused clasp dependency has previously recorded unresolved audit findings; it is separate from the prototype and unnecessary for editor deployment or offline survey tests. See [survey documentation](survey/README.md).
 
 ## Repository map
 
@@ -109,6 +108,5 @@ Codex assisted planning, public-source research synthesis, implementation, debug
 | [prototype/](prototype/README.md) | Working application, locked dependencies and tests |
 | [docs/](docs/project-context.md) | Context, decisions, evidence, demonstration and publication preparation |
 | [research/](research/README.md) | Dated public-source assessments; no private interviews or respondent data |
-| [survey/](survey/README.md) | Approved questionnaire, Apps Script generator and mocked tests |
 
-[AGENTS.md](AGENTS.md) records development safeguards. No original brief/deck, private responses, local keys or databases are distributed. Publication remains subject to owner approval; see [GitHub preparation](docs/github-publication.md).
+[AGENTS.md](AGENTS.md) records development safeguards. No original brief/deck, private responses, local keys or databases are distributed. Source is published at [TheCyberSensei/zwakala](https://github.com/TheCyberSensei/zwakala); further publication requires owner approval. See [GitHub publication guidance](docs/github-publication.md).

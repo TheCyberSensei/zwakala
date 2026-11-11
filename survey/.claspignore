@@ -1,5 +1,0 @@
-# Only these reviewed runtime files may leave the local workspace.
-**/**
-!appsscript.json
-!Code.gs
-!SurveySpec.gs

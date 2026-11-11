@@ -79,3 +79,11 @@ After applying the approved ZWAKALA identity, verification ran in a separate loc
 - The complete **31-check browser acceptance suite** and **69 survey tests were not rerun after branding**. Their results above belong to the original Milestone 4 verification.
 
 Later on the same date, following the two README editorial adjustments, the main local application was rebuilt successfully and restarted on `http://127.0.0.1:3000`. A fresh browser smoke check confirmed HTTP 200, the rendered name/tagline/description and browser title, with no browser exceptions. No sign-in, account setup or report mutation was performed by this check; no additional full test-suite run is claimed.
+
+## GitHub Mermaid workflow — owner verification
+
+**PASSED (owner visual inspection)** — recorded 11 November 2026 from the owner's explicit confirmation. The owner personally inspected the Mermaid workflow in the [published ZWAKALA README](https://github.com/TheCyberSensei/zwakala) and confirmed that the diagram renders correctly, including its stages, arrows and branches. This closes the earlier visual-rendering limitation. It is **not automated browser verification** by Codex.
+
+## Presenter journey validation — 11 November 2026
+
+The [revised demonstration guide](demo-walkthrough.md) was checked against implemented controls and exercised with its exact fictional A/B scenario in a separate local rehearsal store. Focused browser validation covered preparation, A's submission/moderation, possible association and qualified notice, exact community stories/link, simulated bank acknowledgement/action, and contributor dispute. One test selector had an extra full stop; it was corrected and validation resumed on the same state. No application change or claim of an uninterrupted timed human rehearsal. Community and contributor-feedback screenshots were visually inspected; narration/recording timing remains estimated. Full automated/browser/survey suites were not rerun for these documentation-only changes.

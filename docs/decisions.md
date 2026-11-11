@@ -2,6 +2,14 @@
 
 Record meaningful decisions with their date, status, rationale and consequences. Do not treat hypotheses as findings or record approvals that have not occurred.
 
+## D012: Refine visual hierarchy without changing disclosure or workflow
+
+- **Date/status:** 11 November 2026; participant approved Stage A and authorised Stage B, verification and a reviewed local commit only. No push or deployment.
+- **Decision:** Apply a warm-white/charcoal/terracotta/teal visual system with installed sans-serif fonts, compact controls and stronger story/progress hierarchy. Put current progress before the original while keeping the complete history and separate exact-text approval model. Use only existing authorised API projections.
+- **Rationale:** Inspection found that long introductions, broad panels and low visual differentiation obscured the next action and institutional follow-up. Clearer hierarchy offers value without new product infrastructure.
+- **Safeguards:** No changes to server permissions, matching rules, database schema or dependencies. Current-version progress must exclude stale notifications; retain historical copies without suggesting recall. Preserve open feedback controls while refreshing. No public metadata inferred from private reports. No use of Impeccable or replacement design skills.
+- **Verification boundary:** Use fresh fictional acceptance stores and a copied presenter fixture; preserve original reports/keys. Record actual tests and failures separately in the development log. Browser layouts do not establish real-user comprehension or complete accessibility certification.
+
 ## D011: Separate the banking survey from the final capstone
 
 - **Date/status:** 11 November 2026 (Africa/Johannesburg); explicit participant decision.

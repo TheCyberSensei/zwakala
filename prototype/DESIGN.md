@@ -1,9 +1,23 @@
-# Connected digital-safety interface
+# ZWAKALA visual direction
 
-Mode: Operate. The participant approved implementation of the specified reporting journey. Use familiar labelled controls and a focused form; do not expand this milestone into a branding exercise.
+Approved Stage B refinement, 11 November 2026. The participant asked for a contemporary, people-centred product: comfortable reading space around stories, compact structure around controls. This supersedes the earlier cream/plum/serif presentation. The direction comes from direct desktop/mobile inspection and participant approval; no design skill, cultural-validation claim or new user research is involved.
 
-Milestone 2 uses a warm cream ground, plum navigation, berry primary actions, teal active navigation and restrained ochre geometry. This responds to the participant’s request for a warmer South African identity through colour relationships and clarity; it reproduces no traditional motifs. Georgia headings and system sans-serif controls use installed fonts with no font-service requests. Generous section spacing, restrained borders, no decorative imagery or animation. The participant-authorised refinement replaces the long form and permanent report sidebar with a compact saved-report selector and four steps: experience, organisations, sharing, review/save. Desktop pairs writing with contextual help, and sharing choices with the editable community draft. Mobile stacks these sections. Native labels, fieldsets, radio groups, expandable language choices, focus rings and error/status announcements remain essential.
+## Shared presentation
 
-The saved view pairs the original with a concise visibility/sharing summary. Community text is collapsed until requested. Labels describe actual persisted state. Simulated delivery and institutional updates are labelled and distinguished from acknowledgement, investigation, reported action and contributor confirmation. Role-appropriate navigation connects private reports, community, review queue and inbox. Numeric step indicators represent form navigation only. Focus moves to the heading on step changes and to announced errors. Audience choices map to independent stored permissions rather than a new combined backend flag.
+Warm white surfaces, charcoal text, deep terracotta actions and restrained teal informational emphasis. A compact light header and confident sans-serif wordmark retain the name and tagline. Installed system fonts only: no downloaded fonts, images, animations, visual library or new dependency. Main content is bounded to 1,200px; narrative paragraphs have a readable line length. Borders group meaningful records rather than every paragraph.
 
-Assumptions derive from the approved brief, not user-tested preferences. The skill context ran from the parent workspace; product files were then read/created in prototype. Its direction seed was degraded (no remote catalog); no visual-choice interview or claimed visual study occurred. Functional scope and the user's approval to proceed take precedence over further design rounds. This is an authored design assumption, not a claim of cultural validation or user research. M2 retains native controls and avoids new fonts, images or component dependencies.
+The welcome screen places the promise beside local sign-in, followed by the three-part journey. Mobile follows the same reading order. Technical key guidance is expandable; fictional-data boundaries remain explicit. Native labels, fieldsets, radio groups, error/status announcements, 44px-or-larger action targets and visible keyboard focus remain essential.
+
+## Stories, decisions and follow-up
+
+The four-step contributor form and separate audience choices are unchanged. Approved text uses labelled status panels instead of faded buttons. Exact-text approval remains distinct from saving, submission and moderator review. Audience text is never shortened, summarised or silently redacted for layout.
+
+Saved reports show current progress before the original and sharing summary. A keyboard-accessible link reaches the full history and response controls. The summary includes only current-version, non-stale notifications; delivered historical copies remain below. Institution-reported outcomes are labelled as claims, and contributor feedback stays separate. Initial progress loading, failed retrieval and refresh are distinct; refresh retains the mounted history and open feedback controls.
+
+Community stories use bounded reading blocks with unverified labels. Qualified notices retain their full uncertainty wording and links to the actual approved narratives. No private title, owner, date or matching metadata is added. Moderator section links expose possible connections without hiding review requirements. Approved audience versions sit alongside each other on desktop. Institutional inboxes pair approved words with response/history, stacking in source order on mobile.
+
+## Responsive and accessibility boundaries
+
+Layouts collapse at 800px and tighten at 480px without reducing the base reading size. Focus treatment, form-step focus movement, native controls and exact action labels are retained. Status is expressed in text as well as colour; teal is not a verification badge. No sticky overlay obscures controls. Test 320px layouts and 200% text, keyboard navigation, consent/privacy regressions and the complete connected journey after changes.
+
+Long histories and dual-audience sharing still require scrolling. This refinement does not add filtering, virtualisation, automatic language interpretation or full assistive-technology certification. Application behaviours and server permissions govern the design.

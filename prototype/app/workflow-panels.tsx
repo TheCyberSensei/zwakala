@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import type { Actor, Report, Association } from '../lib/domain';
 import { institutions, relationshipLabels } from '../lib/domain';
 import { api } from '../lib/client';
@@ -30,26 +30,46 @@ function Feedback({ updateId, refresh }: { updateId: string; refresh: () => Prom
   const [reason, setReason] = useState(''); const a = useAction();
   return <details><summary>Confirm or dispute this outcome</summary><Reason disabled={a.busy} id={'feedback-' + updateId} value={reason} onChange={setReason} title="Your experience of this outcome" /><div className="actions">{['confirmed', 'disputed'].map(decision => <button key={decision} disabled={a.busy} className="secondary" onClick={() => a.run(async () => { await api('updates/' + updateId + '/feedback', 'POST', { decision, reason }); setReason(''); await refresh(); a.setMessage('Your response is recorded against this specific update.'); })}>{decision === 'confirmed' ? 'Confirm outcome' : 'Dispute outcome'}</button>)}</div>{a.feedback}</details>;
 }
-export function Journey({ report, actor, onChanged, onWithdrawal }: { report: Report; actor: Actor; onChanged: () => Promise<void>; onWithdrawal: (v: boolean) => void }) {
-  const [data, setData] = useState<JourneyData | null>(null), [reason, setReason] = useState(''); const a = useAction();
-  const refresh = async () => { const current = await api('reports/' + report.id + '/journey'); setData(current); onWithdrawal(!!current.withdrawal); if (current.version !== report.version) await onChanged(); };
-  useEffect(() => { let active = true; api('reports/' + report.id + '/journey').then(d => { if (active) { setData(d); onWithdrawal(!!d.withdrawal); } }).catch(() => { if (active) setData(null); }); return () => { active = false; }; }, [report.id, report.version]);
-  return <section className="journey"><h2>What happened next?</h2><button className="secondary" disabled={a.busy} onClick={() => a.run(refresh)}>Refresh progress</button>{a.feedback}{!data ? <p>Progress unavailable. Use Refresh progress to retry.</p> : <>
+export function Journey({ report, actor, onChanged, onWithdrawal, children }: { report: Report; actor: Actor; onChanged: () => Promise<void>; onWithdrawal: (v: boolean) => void; children?: ReactNode }) {
+  const [data, setData] = useState<JourneyData | null>(null), [reason, setReason] = useState('');
+  const [loading, setLoading] = useState(true); const a = useAction();
+  const refresh = async () => {
+    setLoading(true);
+    try { const current = await api('reports/' + report.id + '/journey'); setData(current); onWithdrawal(!!current.withdrawal); if (current.version !== report.version) await onChanged(); }
+    catch (error) { setData(null); throw error; }
+    finally { setLoading(false); }
+  };
+  useEffect(() => {
+    let active = true; setLoading(true); setData(null);
+    api('reports/' + report.id + '/journey').then(d => { if (active) { setData(d); onWithdrawal(!!d.withdrawal); } }).catch(() => { if (active) setData(null); }).finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
+  }, [report.id, report.version]);
+  const currentNotifications = data?.notifications.filter(n => n.version === report.version && !n.staleReason) ?? [];
+  return <><section className="progress-overview" aria-label="Current report progress">
+    <div className="section-heading"><div><p className="eyebrow">Your report, at a glance</p><h2>Current progress</h2></div><button className="secondary" disabled={a.busy || loading} onClick={() => a.run(refresh)}>Refresh progress</button></div>{a.feedback}
+    {loading ? <p role="status">Loading report progress…</p> : !data ? <p role="alert">Progress unavailable. Use Refresh progress to retry.</p> : <>
     <p className="notice">{data.withdrawal ? 'Withdrawn. Further sharing has stopped; previously delivered copies and history remain.' : data.submitted ? 'This version was submitted for review.' : 'This version is saved privately and has not been submitted for review.'} {data.communityVisible ? 'Your exact approved community version is visible in this local demo.' : 'This report is not currently visible to the community.'}</p>
+    {!!currentNotifications.length && <ul className="progress-list">{currentNotifications.map(n => {
+      const latest = n.updates.at(-1);
+      const feedback = latest?.feedback.at(-1);
+      return <li key={n.id}><strong>{org(n.institutionId)}</strong><span>{latest ? label(latest.kind) : label(n.status)}</span>{feedback && <span className="feedback-status">{label(feedback.decision)}</span>}</li>;
+    })}</ul>}
+    <a className="jump-link" href="#report-history">Read updates and respond <span aria-hidden="true">↓</span></a>
     {actor.role === 'contributor' && !data.withdrawal && <><div className="actions"><button disabled={a.busy || !!data.submitted || !(data.communityReady || data.institutionReady)} onClick={() => a.run(async () => { await api('reports/' + report.id + '/submit', 'POST', { version: report.version }); await refresh(); })}>{data.submitted ? 'Submitted for review' : 'Submit approved version for review'}</button></div><p className="hint">Saving does not submit. Corrections stop further sharing and require a new submission and moderator review. If submission is unavailable, edit your sharing choices and approve the exact text for at least one audience.</p></>}
+    </>}</section>{children}<section className="journey" id="report-history" tabIndex={-1} aria-busy={loading}><p className="eyebrow">Decisions, responses & your voice</p><h2>What happened next?</h2>{loading && data && <p role="status">Refreshing history… The previous updates remain below.</p>}{loading && !data ? <p>Loading report history…</p> : !data ? <p>History is unavailable. Use Refresh progress above to retry.</p> : <>
     <h3>Moderator decisions</h3>{!data.moderation.length ? <p>No review decision yet.</p> : <ol className="timeline">{data.moderation.map((m, i) => <li key={i}><strong>{label(m.decision)} · version {m.version}</strong><p className="meta">{m.actorName} · {date(m.at)}</p><p className="preserve">{m.reason}</p></li>)}</ol>}
     <h3>Organisation progress</h3><p className="hint">Delivery is not acknowledgement, investigation or resolution. All representatives and actions here are simulated.</p>
     {!data.notifications.length ? <p>No notification has been queued.</p> : data.notifications.map(n => <article className="notification" key={n.id}><h4>{org(n.institutionId)} · version {n.version}</h4><p><strong>{label(n.status)}</strong>{n.deliveredAt && ' · ' + date(n.deliveredAt)}</p>{n.staleReason && <p className="notice">{n.staleReason}</p>}<Updates updates={n.updates} contributor={actor.role === 'contributor'} refresh={refresh} /></article>)}
     {actor.role === 'contributor' && !data.withdrawal && <details className="withdrawal"><summary>Withdraw this report from further sharing</summary><p>Community visibility and pending deliveries stop. Already delivered information is not recalled. The private report and history remain read-only.</p><Reason disabled={a.busy} id="withdraw-reason" value={reason} onChange={setReason} title="Why are you withdrawing?" /><button className="secondary" disabled={a.busy} onClick={() => a.run(async () => { await api('reports/' + report.id + '/withdraw', 'POST', { version: report.version, reason }); await refresh(); await onChanged(); })}>Withdraw report</button></details>}
-  </>}</section>;
+  </>}</section></>;
 }
 export function Community() {
   const [data, setData] = useState<{ experiences: { id: string; text: string; label: string }[]; notices: { id: string; text: string; experienceIds: string[] }[] } | null>(null); const a = useAction();
   const refresh = async () => setData(await api('community'));
   useEffect(() => { void a.run(refresh); }, []); // Only reads the authenticated, filtered local community endpoint.
-  return <section className="workspace"><h1>Experiences we can learn from</h1><p className="lede">People’s own words, shared by choice. A moderator review is not verification of an allegation.</p><p className="notice">Fictional local community demonstration. No real incidents or public reporting.</p><button className="secondary" disabled={a.busy} onClick={() => a.run(refresh)}>Refresh community</button>{a.feedback}
+  return <section className="workspace community-view"><p className="eyebrow">Community voices</p><div className="section-heading"><h1>Experiences we can learn from</h1><button className="secondary" disabled={a.busy} onClick={() => a.run(refresh)}>Refresh community</button></div><p className="lede">People’s own words, shared by choice. A moderator review is not verification of an allegation.</p><p className="hint">Fictional local community demonstration. No real incidents or public reporting.</p>{a.feedback}
     <h2>Qualified pattern notices</h2>{data?.notices.length ? data.notices.map(n => <article className="pattern-notice" key={n.id}><p>{n.text}</p><ul>{n.experienceIds.map((id, i) => <li key={id}><a href={'#experience-' + id}>Read linked experience {i + 1}</a></li>)}</ul></article>) : <p>No reviewed pattern notices yet.</p>}
-    <h2>Shared experiences</h2>{data?.experiences.length ? data.experiences.map(e => <article className="community-story" id={'experience-' + e.id} key={e.id}><p className="tag">{e.label}</p><p dir="auto" className="preserve">{e.text}</p></article>) : <p>No experiences are currently approved for community display.</p>}
+    <h2>Shared experiences</h2><div className="story-grid">{data?.experiences.length ? data.experiences.map(e => <article className="community-story" id={'experience-' + e.id} tabIndex={-1} key={e.id}><p className="tag">{e.label}</p><p dir="auto" className="preserve">{e.text}</p></article>) : <p>No experiences are currently approved for community display.</p>}</div>
   </section>;
 }
 export function Moderation() {
@@ -57,8 +77,9 @@ export function Moderation() {
   const refresh = async () => setData(await api('moderation'));
   useEffect(() => { void a.run(refresh); }, []);
   return <section className="workspace"><h1>Review with care</h1><p className="lede">Protect the contributor’s choices. Approve only the exact versions they authorised, and keep uncertainty visible.</p><div className="actions"><button className="secondary" disabled={a.busy} onClick={() => a.run(refresh)}>Refresh review queue</button><button className="secondary" disabled={a.busy} onClick={() => a.run(async () => { const result = await api('deliveries/retry', 'POST', {}); a.setMessage(result.delivered + ' delivered; ' + result.cancelled + ' cancelled. Simulated inboxes only.'); await refresh(); })}>Retry pending deliveries</button></div>{a.feedback}
-    <fieldset disabled={a.busy} className="queue-content"><legend className="sr-only">Review actions</legend><h2>Submitted reports</h2>{data?.queue.length ? data.queue.map(row => <Review key={row.report.id + ':' + row.report.version} row={row} refresh={refresh} />) : <p>No current submissions. Contributors must save and explicitly submit an approved version first.</p>}
-    <h2>Possible connections</h2><p>Suggestions use reported channel, organisation relationship, requested action and a 14-day window. Identical text/date/channel is flagged separately as a possible duplicate. These rules do not establish a shared scam campaign.</p>
+    <nav className="section-links" aria-label="Review sections"><a href="#submitted-reports">Submitted reports</a><a href="#possible-connections">Possible connections <span aria-hidden="true">↓</span></a></nav>
+    <fieldset disabled={a.busy} className="queue-content"><legend className="sr-only">Review actions</legend><h2 id="submitted-reports" tabIndex={-1}>Submitted reports</h2>{data?.queue.length ? data.queue.map(row => <Review key={row.report.id + ':' + row.report.version} row={row} refresh={refresh} />) : <p>No current submissions. Contributors must save and explicitly submit an approved version first.</p>}
+    <h2 id="possible-connections" tabIndex={-1}>Possible connections</h2><p>Suggestions use reported channel, organisation relationship, requested action and a 14-day window. Identical text/date/channel is flagged separately as a possible duplicate. These rules do not establish a shared scam campaign.</p>
     {data?.suggestions.length ? data.suggestions.map(s => <Connection key={s.leftId + s.rightId + s.leftVersion + s.rightVersion} suggestion={s} refresh={refresh} />) : <p>No pairs meet the current suggestion rules.</p>}</fieldset>
   </section>;
 }
@@ -66,8 +87,8 @@ function Review({ row, refresh }: { row: { report: Report; review: Decision | nu
   const r = row.report; const [reason, setReason] = useState(''); const a = useAction();
   return <article className="review-item"><h3>{r.title}</h3><p className="meta">Version {r.version} · {r.channel} · {r.incidentDate}</p><p>{row.review ? label(row.review.decision) + ' — ' + row.review.reason + ' (' + row.review.actorName + ')' : 'Awaiting review'}</p>
     <details><summary>Read private original and connections</summary><p className="preserve">{r.narrative}</p><ul>{r.associations.map((x, i) => <li key={i}>{org(x.institutionId)} — {relationshipLabels[x.relationship]} · {x.allowInstitutionSharing ? 'Authorised recipient' : 'No sharing permission'}</li>)}</ul></details>
-    {row.communityReady && <section><h4>Contributor-approved community text</h4><p className="preserve">{r.communityText}</p></section>}
-    {row.institutionReady && <section><h4>Contributor-approved organisation text</h4><p className="preserve">{r.institutionText}</p></section>}
+    <div className="approved-versions">{row.communityReady && <section><h4>Contributor-approved community text</h4><p className="preserve" dir="auto">{r.communityText}</p></section>}
+    {row.institutionReady && <section><h4>Contributor-approved organisation text</h4><p className="preserve" dir="auto">{r.institutionText}</p></section>}</div>
     <p className="hint">Approval displays only the approved community text and immediately queues the approved organisation text for simulated delivery. Relevance does not imply responsibility. Withholding or requesting clarification stops further sharing.</p>
     <Reason disabled={a.busy} id={'review-' + r.id} value={reason} onChange={setReason} title="Review reason" /><div className="actions">{(['approve', 'withhold', 'clarification'] as const).map(decision => <button key={decision} className={decision === 'approve' ? '' : 'secondary'} disabled={a.busy} onClick={() => a.run(async () => { const result = await api('reports/' + r.id + '/moderate', 'POST', { version: r.version, decision, reason }); await refresh(); a.setMessage(result.deliveryPending ? 'Review saved. Delivery is pending; use Retry pending deliveries.' : 'Decision recorded.'); })}>{decision === 'approve' ? 'Approve sharing' : decision === 'withhold' ? 'Withhold sharing' : 'Request clarification'}</button>)}</div>{a.feedback}
   </article>;
@@ -90,7 +111,7 @@ export function Inbox() {
 }
 function InboxItem({ item: n, refresh }: { item: Notification; refresh: () => Promise<void> }) {
   const [message, setMessage] = useState(''), [kind, setKind] = useState('investigating'); const a = useAction();
-  return <article className="notification"><h2>Shared with {org(n.institutionId)}</h2><p className="meta">Simulated delivery · {date(n.deliveredAt)} · version {n.version}</p><p className="preserve">{n.text}</p><ul>{n.relationships.map(r => <li key={r}>{relationshipLabels[r]}</li>)}</ul><p className="hint">{n.caveat}</p>{n.staleReason && <p className="notice">{n.staleReason} This historical copy is read-only.</p>}<Updates updates={n.updates} />
-    {!n.staleReason && <><Reason disabled={a.busy} id={'response-' + n.id} value={message} onChange={setMessage} title="Update for the contributor" />{!!n.updates.length && <><label htmlFor={'kind-' + n.id}>Update stage</label><select disabled={a.busy} id={'kind-' + n.id} value={kind} onChange={e => setKind(e.target.value)}><option value="investigating">Investigation reported</option><option value="action_reported">Action reported</option><option value="resolution_reported">Resolution reported</option></select></>}<button disabled={a.busy} onClick={() => a.run(async () => { await api('inbox/' + n.id + '/updates', 'POST', { kind: n.updates.length ? kind : 'acknowledged', message }); setMessage(''); await refresh(); })}>{n.updates.length ? 'Record update' : 'Acknowledge receipt'}</button><p className="hint">An institutional claim of resolution is not contributor confirmation. The contributor can confirm or dispute reported outcomes.</p></>}{a.feedback}
+  return <article className="notification"><h2>Shared with {org(n.institutionId)}</h2><p className="meta">Simulated delivery · {date(n.deliveredAt)} · version {n.version}</p><div className="inbox-grid"><section className="inbox-story"><p className="eyebrow">Contributor-approved words</p><p className="preserve" dir="auto">{n.text}</p><ul>{n.relationships.map(r => <li key={r}>{relationshipLabels[r]}</li>)}</ul><p className="hint">{n.caveat}</p>{n.staleReason && <p className="notice">{n.staleReason} This historical copy is read-only.</p>}</section><section className="inbox-response"><h3>Response & follow-up</h3>{!n.updates.length && <p className="hint">Delivered. Your organisation has not acknowledged this report yet.</p>}<Updates updates={n.updates} />
+    {!n.staleReason && <><Reason disabled={a.busy} id={'response-' + n.id} value={message} onChange={setMessage} title="Update for the contributor" />{!!n.updates.length && <><label htmlFor={'kind-' + n.id}>Update stage</label><select disabled={a.busy} id={'kind-' + n.id} value={kind} onChange={e => setKind(e.target.value)}><option value="investigating">Investigation reported</option><option value="action_reported">Action reported</option><option value="resolution_reported">Resolution reported</option></select></>}<button disabled={a.busy} onClick={() => a.run(async () => { await api('inbox/' + n.id + '/updates', 'POST', { kind: n.updates.length ? kind : 'acknowledged', message }); setMessage(''); await refresh(); })}>{n.updates.length ? 'Record update' : 'Acknowledge receipt'}</button><p className="hint">An institutional claim of resolution is not contributor confirmation. The contributor can confirm or dispute reported outcomes.</p></>}{a.feedback}</section></div>
   </article>;
 }
